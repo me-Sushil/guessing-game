@@ -82,4 +82,26 @@ function newGame(){
     return new Game();   
 }
 
+function provideHint(){
+    
+   const hintArray = [this.winningNumber];
 
+  // Add 2 additional random numbers
+  while (hintArray.length < 3) {
+    let num = generateWinningNumber();
+    if (!hintArray.includes(num)) {
+      hintArray.push(num);
+    }
+  }
+
+  return shuffle(hintArray);
+};
+
+function shuffle(arr) {
+  // Fisher-Yates shuffle
+  for (let i = arr.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
