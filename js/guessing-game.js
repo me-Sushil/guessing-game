@@ -23,10 +23,11 @@ function shuffle(array) {
 }
 
 class Game{
-    constructor(playersGuess, pastGuesses){
-        this.playersGuess = playersGuess;
-        this.pastGuesses = [];
-
-
+    constructor(playersGuess, pastGuesses = []){
+        this.playersGuess = null;
+        this.winningNumber = generateWinningNumber();
+    }
+    difference(){
+        return Math.abs(this.playersGuess - this.winningNumber);
     }
 }
