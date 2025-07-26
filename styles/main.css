@@ -1,15 +1,18 @@
 /* Write your CSS code in this file */
 body{
     justify-items: center;
-    background-color:rgba(24, 24, 24, 0.6)
+    background-color:rgba(172, 168, 168, 0.6)
+    
 }
 .mainDiv{
     justify-items: center;
-    background-color: aqua;
+    background-color: rgb(79, 67, 83);
     border-radius: 5px;
     border-width: 9px;
     border-style: outset;
     border-color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: oblique;
     /* height: 100%;*/
     width: 90%;
 
@@ -37,5 +40,5 @@ body{
 
 
 .butnn{
-    margin-bottom: 90px;
+    margin-bottom: 130px;
 }
