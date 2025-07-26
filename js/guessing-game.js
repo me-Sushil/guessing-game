@@ -77,3 +77,9 @@ class Game {
   }
 }
 
+
+function newGame(){
+    return new Game();   
+}
+
+
