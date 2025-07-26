@@ -23,7 +23,10 @@ function shuffle(array) {
 }
 
 class Game{
-    constructor(){
-        
+    constructor(playersGuess, pastGuesses){
+        this.playersGuess = playersGuess;
+        this.pastGuesses = [];
+
+
     }
 }
