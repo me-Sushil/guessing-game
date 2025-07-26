@@ -31,5 +31,12 @@ class Game{
     difference(){
         return Math.abs(this.playersGuess - this.winningNumber);
     }
+    isLower(){
+        if(this.playersGuess < this.winningNumber){
+            return true;
+        }else{
+            return false;
+        }
+    }
     
 }
