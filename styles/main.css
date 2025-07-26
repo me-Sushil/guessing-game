@@ -6,8 +6,12 @@ body{
 .mainDiv{
     justify-items: center;
     background-color: aqua;
-    height: 100%;
-    width: 50%;
+    border-radius: 5px;
+    border-width: 9px;
+    border-style: outset;
+    border-color: black;
+    /* height: 100%;*/
+    width: 90%;
 
 }
 
@@ -15,4 +19,15 @@ body{
   font-size: 52px;
   font-weight: bold;
 
+}
+
+.buttonSec{
+    margin: 5px;
+}
+
+.buttonSeca{
+    margin-bottom: 30px;
+}
+.butnn{
+    margin-bottom: 30px;
 }
