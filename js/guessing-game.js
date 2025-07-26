@@ -5,11 +5,25 @@ In this file, you will also include the event listeners that are needed to inter
 a user clicks a button or adds a guess to the input field.
 */
 
-function generateWinningNumber(){
-    return Math.floor(Math.random() * 100) + 1;
+function generateWinningNumber() {
+  return Math.floor(Math.random() * 100) + 1;
 }
 
-function shuffle(array){
-    let m = array.length;
+function shuffle(array) {
+  let m = array.length;
+  while (m > 0) {
+    let i = Math.floor(Math.random() * m);
+    m--;
 
+    let temp = array[m];
+    array[m] = array[i];
+    array[i] = temp;
+  }
+  return array;
+}
+
+class Game{
+    constructor(){
+        
+    }
 }
