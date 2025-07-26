@@ -20,14 +20,22 @@ body{
   font-weight: bold;
 
 }
+.button{
+    display: flex;
+    gap: 10px;
+}
 
 .buttonSec{
+    
     margin: 5px;
+    height: 100%;
+    width: 50%;
+    background-color: rgb(255, 61, 100);
+    border-radius: 5px;
+    border-color: black;
 }
 
-.buttonSeca{
-    margin-bottom: 30px;
-}
+
 .butnn{
-    margin-bottom: 30px;
+    margin-bottom: 90px;
 }
