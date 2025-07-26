@@ -92,3 +92,11 @@ class Game {
 function newGame() {
   return new Game();
 }
+
+
+let header = document.querySelector(".myGussingGame");
+let h2Guess = document.querySelector(".guide");
+let preGuess = document.querySelector(".preGusses");
+let h4remine = document.querySelector(".remine");
+let buttons = document.getElementById("buttonSection");
+let inputFild = document.getElementById("input");
