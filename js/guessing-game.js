@@ -5,7 +5,6 @@ In this file, you will also include the event listeners that are needed to inter
 a user clicks a button or adds a guess to the input field.
 */
 
-//const { error } = require("console");
 
 function generateWinningNumber() {
   return Math.floor(Math.random() * 100) + 1;
@@ -93,6 +92,8 @@ function newGame() {
   return new Game();
 }
 
+let game = newGame();
+
 
 let header = document.querySelector(".myGussingGame");
 let h2Guess = document.querySelector(".guide");
@@ -100,3 +101,7 @@ let preGuess = document.querySelector(".preGusses");
 let h4remine = document.querySelector(".remine");
 let buttons = document.getElementById("buttonSection");
 let inputFild = document.getElementById("input");
+
+function userInputNum(){
+
+}
