@@ -9,36 +9,36 @@
 
   <body>
     <div class="mainDiv" id="mainDiv">
-      <header class="myGussingGame">My Guessing Game</header>
+      <header class="myGussingGame" id="header">My Guessing Game</header>
       <div class="guide">
-        <h2>Guess a Number betweeb 1-100</h2>
+        <h2 id="h2">Guess a Number betweeb 1-100</h2>
       </div>
       <div class="preGusses" id="prevosGusses">
-          <h3>Previous Guesses</h3>
-          <ul class="preGusses" id="ulist">
-            <li class="preGusses" id="li1">-</li>
-            <li class="preGusses" id="li2">-</li>
-            <li class="preGusses" id="li3">-</li>
-            <li class="preGusses" id="li4">-</li>
-            <li class="preGusses" id="li5">-</li>
-          </ul>
-       
+        <h3>Previous Guesses</h3>
+        <ul class="preGusses" id="ulist">
+          <li class="preGusses" id="li1">-</li>
+          <li class="preGusses" id="li2">-</li>
+          <li class="preGusses" id="li3">-</li>
+          <li class="preGusses" id="li4">-</li>
+          <li class="preGusses" id="li5">-</li>
+        </ul>
+
         <div class="remine" id="remineGuss">
           <h4>One Guess Remaining, you are close!</h4>
         </div>
       </div>
       <div class="buttonSection" id="buttonSection">
         <div class="button">
-          <button class="buttonSec">Play Again</button>
-          <button class="buttonSec"> Need a Hint?</button>
+          <button class="buttonSec" id="reset">Play Again</button>
+          <button class="buttonSec" id="hint">Need a Hint?</button>
         </div>
         <div class="buttonSeca">
           <input id="input" placeholder="Guess the Number" />
-          <button class="butnn">Submit</button>
+          <button class="butnn" id="submit">Submit</button>
         </div>
       </div>
     </div>
-    <script src='./js/guessing-game.js'></script>
+    <script src="./js/guessing-game.js"></script>
     <!-- uncomment the script tag above when you are ready to add JavaScript to your document -->
   </body>
 </html>

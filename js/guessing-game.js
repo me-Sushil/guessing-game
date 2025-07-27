@@ -86,22 +86,27 @@ class Game {
 }
 }
 
-
-
 function newGame() {
   return new Game();
 }
 
 let game = newGame();
 
-
+let mainDiv = document.querySelector(".mainDiv");
 let header = document.querySelector(".myGussingGame");
 let h2Guess = document.querySelector(".guide");
 let preGuess = document.querySelector(".preGusses");
 let h4remine = document.querySelector(".remine");
 let buttons = document.getElementById("buttonSection");
 let inputFild = document.getElementById("input");
+let submit = document.querySelector(".butnn");
 
-function userInputNum(){
+mainDiv.addEventListener((event)=>{
+  if(event.target === submit ){
+    let num = inputFild.textContent;
+    console.log(num);
+    playersGuessSubmission(num);
 
-}
+  }
+
+})
