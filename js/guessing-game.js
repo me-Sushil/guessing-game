@@ -137,8 +137,18 @@ buttons.addEventListener("click", (event) => {
   }
 
   if (event.target.id === "reset") {
-    game.newGame();
+    game = newGame();
+
+    pastGusArray.forEach((li) => {
+      li.innerText = "-";
+    });
+
+    hint.disabled = false;
+    submit.disabled = false;
+    inputFild.disabled = false;
+
   }
+
   if (event.target.id === "hint") {
     let hint = game.provideHint();
     h2Guess.innerText = `The winning number is either ${hint[0]}, ${hint[1]}, or ${hint[2]},`;
