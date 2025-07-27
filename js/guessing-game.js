@@ -92,17 +92,19 @@ function newGame() {
 
 let game = newGame();
 
-let mainDiv = document.querySelector(".mainDiv");
-let header = document.querySelector(".myGussingGame");
-let h2Guess = document.querySelector(".guide");
-let preGuess = document.querySelector(".preGusses");
-let h4remine = document.querySelector(".remine");
+let mainDiv = document.getElementById("mainDiv");
+let header = document.getElementById("header");
+let h2Guess = document.getElementById("h2");
+let preGuess = document.getElementById("ulist");
+let h4remine = document.getElementById("remineGuss");
 let buttons = document.getElementById("buttonSection");
 let inputFild = document.getElementById("input");
-let submit = document.querySelector(".butnn");
+let submit = document.getElementById("submit");
+let reset = document.getElementById("reset");
+let hint = document.getElementById("hint");
 
 mainDiv.addEventListener((event)=>{
-  if(event.target === submit ){
+  if(event.target.id === submit ){
     let num = inputFild.textContent;
     console.log(num);
     playersGuessSubmission(num);
