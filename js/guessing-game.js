@@ -49,7 +49,7 @@ class Game {
 
   checkGuess(num) {
     if (num === this.winningNumber) {
-      console.log(this.winningNumber);
+      //console.log(this.winningNumber);
       return "You Win!";
     }
 
@@ -92,11 +92,11 @@ function newGame() {
 
 let game = new Game();
 
-let mainDiv = document.getElementById("mainDiv");
-let header = document.getElementById("header");
+//let mainDiv = document.getElementById("mainDiv");
+//let header = document.getElementById("header");
 let h2Guess = document.getElementById("h2");
 let pastGusArray = document.querySelectorAll(".preGuess");
-let h4remine = document.getElementById("remineGuss");
+//let h4remine = document.getElementById("remineGuss");
 let buttons = document.getElementById("buttonSection");
 let inputFild = document.getElementById("input");
 let submit = document.getElementById("submit");
