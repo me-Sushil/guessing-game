@@ -147,7 +147,6 @@ buttons.addEventListener("click", (event) => {
     submit.disabled = false;
     inputFild.disabled = false;
     h2Guess.innerText = `Guess a Number betweeb 1-100`;
-
   }
 
   if (event.target.id === "hint") {
