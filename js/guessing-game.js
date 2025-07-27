@@ -5,7 +5,6 @@ In this file, you will also include the event listeners that are needed to inter
 a user clicks a button or adds a guess to the input field.
 */
 
-
 function generateWinningNumber() {
   return Math.floor(Math.random() * 100) + 1;
 }
@@ -50,6 +49,7 @@ class Game {
 
   checkGuess(num) {
     if (num === this.winningNumber) {
+      console.log(this.winningNumber);
       return "You Win!";
     }
 
@@ -75,27 +75,27 @@ class Game {
     }
   }
 
-   provideHint() {
-  const hintArray = [
-    this.winningNumber,
-    generateWinningNumber(),
-    generateWinningNumber(),
-  ];
+  provideHint() {
+    const hintArray = [
+      this.winningNumber,
+      generateWinningNumber(),
+      generateWinningNumber(),
+    ];
 
-  return shuffle(hintArray);
-}
+    return shuffle(hintArray);
+  }
 }
 
 function newGame() {
   return new Game();
 }
 
-let game = newGame();
+let game = new Game();
 
 let mainDiv = document.getElementById("mainDiv");
 let header = document.getElementById("header");
 let h2Guess = document.getElementById("h2");
-let preGuess = document.getElementById("ulist");
+let pastGusArray = document.querySelectorAll(".preGusses");
 let h4remine = document.getElementById("remineGuss");
 let buttons = document.getElementById("buttonSection");
 let inputFild = document.getElementById("input");
@@ -103,12 +103,35 @@ let submit = document.getElementById("submit");
 let reset = document.getElementById("reset");
 let hint = document.getElementById("hint");
 
-mainDiv.addEventListener((event)=>{
-  if(event.target.id === submit ){
-    let num = inputFild.textContent;
-    console.log(num);
-    playersGuessSubmission(num);
+buttons.addEventListener("click", (event) => {
+  if (event.target.id === "submit") {
+    let num = parseInt(inputFild.value);
+    inputFild.value = null;
+    try {
+      let result = game.playersGuessSubmission(num);
+      if (result.includes("You Win!")) {
+        h2Guess.innerText = `🏆👏🎉🎊 Congratulations! ${result} 🎉🎊💯🔥`;
+      } else {
+        h2Guess.innerText = result;
+      }
 
+      let guess = game.pastGuesses;
+      guess.forEach((num, idx) => {
+        console.log(num);
+        if (pastGusArray[idx]) {
+          pastGusArray[idx].innerText = num;
+        }
+      });
+    } catch (error) {
+      h2Guess.innerText = error;
+    }
   }
 
-})
+  if (event.target.id === "reset") {
+    game.newGame();
+  }
+  if (event.target.id === "hint") {
+    let hint = game.provideHint();
+    h2Guess.innerText = `The winning number is either ${hint[0]}, ${hint[1]}, or ${hint[2]},`;
+  }
+});
