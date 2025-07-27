@@ -95,7 +95,7 @@ let game = new Game();
 let mainDiv = document.getElementById("mainDiv");
 let header = document.getElementById("header");
 let h2Guess = document.getElementById("h2");
-let pastGusArray = document.querySelectorAll(".preGusses");
+let pastGusArray = document.querySelectorAll(".preGuess");
 let h4remine = document.getElementById("remineGuss");
 let buttons = document.getElementById("buttonSection");
 let inputFild = document.getElementById("input");
@@ -107,17 +107,26 @@ buttons.addEventListener("click", (event) => {
   if (event.target.id === "submit") {
     let num = parseInt(inputFild.value);
     inputFild.value = null;
+
     try {
       let result = game.playersGuessSubmission(num);
+
       if (result.includes("You Win!")) {
+        hint.disabled = true;
+        submit.disabled = true;
+        inputFild.disabled = true;
         h2Guess.innerText = `🏆👏🎉🎊 Congratulations! ${result} 🎉🎊💯🔥`;
+      } else if (result.includes("You Lose.")) {
+        hint.disabled = true;
+        submit.disabled = true;
+        inputFild.disabled = true;
+        h2Guess.innerText = `😞💔 Oh no! ${result}, Better luck next time! 🍀🔥  `;
       } else {
         h2Guess.innerText = result;
       }
 
       let guess = game.pastGuesses;
       guess.forEach((num, idx) => {
-        console.log(num);
         if (pastGusArray[idx]) {
           pastGusArray[idx].innerText = num;
         }
